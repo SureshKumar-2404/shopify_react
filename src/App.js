@@ -11,20 +11,23 @@ import Contact from './component/Contact';
 import Channel from './component/Channel';
 import Company from './component/Company';
 import Other from './component/Other';
+import Login from './component/Login';
+import Protected from './component/Protected';
 function App() {
   return (
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={ <Protected Component={Home}/>} />
+        <Route path="/about" element={<Protected Component={About}/>} />
+        <Route path='/login' element={<Login />} />
         <Route path="/user/:name" element={<User />} />
-        <Route path="/filter" element={<Filter />} />
+        <Route path="/filter" element={ <Protected Component={Filter}/>}/>
         <Route path="/*" element={<Navigate to="/" />} />
         <Route path="/contact/" element={<Contact />} >
-          <Route path="company" element={<Company/>} />
-          <Route path="channel" element={<Channel/>} />
-          <Route path="other" element={<Other/>} />
+          <Route path="company" element={<Company />} />
+          <Route path="channel" element={<Channel />} />
+          <Route path="other" element={<Other />} />
         </Route>
       </Routes>
     </div>
