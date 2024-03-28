@@ -1,5 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 function Home() {
+    const location = useLocation();
+    console.log('location', location);
     const navigate = useNavigate();
     const navToPage = (url) => {
         navigate(url)

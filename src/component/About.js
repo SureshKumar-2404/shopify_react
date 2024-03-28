@@ -6,7 +6,7 @@ function About() {
             <h1>About Page</h1>
             <Link to="/">Go to Home Page</Link>
             <li>
-                <Link to="/user/anil">Anil</Link>
+                <Link to="/user/anil" state={{ name: 'Anil Sidhu' , age:23}}>Anil</Link>
             </li>
             <li>
                 <Link to="/user/peter">Peter</Link>
